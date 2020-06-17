@@ -1,6 +1,8 @@
 {
   "component": true,
   "usingComponents": {
-    "tabBar": "/components/home/tabBar/index"
+    "tabBar": "/components/home/tabBar/index",
+
+    "songListDetail": "/components/player/songListDetail/index"
   }
 }

@@ -1,0 +1,200 @@
+.active {
+  position: absolute;
+  top: 7vh;
+}
+
+.mask {
+  width: 70vw;
+  height: 7vh;
+  position: fixed;
+  top: 0;
+  left: 16vw;
+  font-size: 3vh;
+  color: white;
+}
+
+.songListDetail {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: white;
+}
+
+.main {
+  width: 100vw;
+  height: 25vh;
+  margin: 3vh 0 0 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.main-info-img {
+  width: 38vw;
+  height: 20vh;
+  margin: 0 0 1vh 5vw;
+}
+
+.main-info-count {
+  display: inline-block;
+  width: 15vw;
+  height: 3vh;
+  position: absolute;
+  left: 29vw;
+  font-size: 1.8vh;
+  color: white;
+  /* background: url("../../../../assets/play-icon.png") 0% 25% no-repeat; */
+  background-size: 25% 60%;
+  text-indent: 4vw;
+}
+
+.main-info-content {
+  width: 50vw;
+  height: 25vh;
+  margin: 0 0 0 5vw;
+}
+
+.main-info-title {
+  width: 50vw;
+  height: 8vh;
+  font-size: 2.7vh;
+  color: white;
+}
+.main-info-creator {
+  width: 50vw;
+  height: 5vh;
+  margin: 1vh 0 1vh 0;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.main-info-creator-img {
+  width: 10vw;
+  height: 5vh;
+  border-radius: 50%;
+}
+
+.main-info-creator span {
+  text-indent: 2vw;
+  color: #9b9b9b;
+  line-height: 5vh;
+}
+
+.main-info-des {
+  font-size: 1.8vh;
+  color: #9b9b9b;
+}
+
+.nav {
+  width: 90vw;
+  height: 10vh;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nav-title {
+  width: 15vw;
+  height: 10vh;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.nav-title img {
+  width: 10vw;
+  height: 6vh;
+}
+
+.nav-title-info {
+  color: #9b9b9b;
+  font-size: 2vh;
+  text-align: center;
+}
+
+.footer {
+  width: 100vw;
+  height: 84vh;
+}
+
+.footer-header {
+  width: 100vw;
+  height: 7vh;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.toCircle-left {
+  width: 10vw;
+  height: 7vh;
+  border-top-left-radius: 100%;
+  background: white;
+}
+
+.toCircle-right {
+  width: 10vw;
+  height: 7vh;
+  border-top-right-radius: 100%;
+  background: white;
+}
+
+.footer-header-img-wrap {
+  width: 10vw;
+  height: 7vh;
+  margin: 0 0 0 -6vw;
+  background: white;
+  border-top-left-radius: 60%;
+}
+
+.footer-header-img {
+  width: 10vw;
+  height: 6vh;
+  background: white;
+  margin: 1vh 0 0 0;
+  border-top-left-radius: 20%;
+}
+
+.footer-header-title {
+  width: 80vw;
+  height: 7vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.footer-header-titleName {
+  display: inline-block;
+  width: 18vw;
+  height: 7vh;
+  line-height: 8vh;
+  font-weight: bold;
+}
+
+.footer-header-titleCount {
+  display: inline-block;
+  width: 20vw;
+  height: 7vh;
+  line-height: 8vh;
+  color: gray;
+  font-size: 2vh;
+}
+
+.footer-list {
+  width: 100vw;
+  background: white;
+}
+
+.songListDetail-bg {
+  width: 100vw;
+  height: 100vh;
+  z-index: -10;
+  -webkit-filter: blur(5px); /* Chrome, Safari, Opera */
+  filter: blur(70px);
+  position: absolute;
+  top: 0;
+}

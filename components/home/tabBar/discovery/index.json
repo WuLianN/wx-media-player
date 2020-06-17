@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "banner": "./banner/index"
+    "banner": "./banner/index",
+    "recommentList": "./recommentList/index"
   }
 }

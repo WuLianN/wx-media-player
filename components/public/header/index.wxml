@@ -1,0 +1,7 @@
+<view class="header">
+  <view class="header-arrow" bindtap="onClickLeft">
+    <image class="img" src="/assets/arrow-left-gray.png" class="{{ changeImgSize === true ? changeImgSize : ''}}"></image>
+  </view>
+
+  <view class="headerTitle" class="{{ changeClass === true ? changeClass: ''}}">{{ leftTitle }}</view>
+</view>

@@ -1,23 +1,22 @@
-const app = new getApp()
 import {
   storeBindingsBehavior
 } from 'mobx-miniprogram-bindings'
 import {
   store
-} from '../../store/index.js'
+} from '../../../store/index.js'
 
 Component({
   behaviors: [storeBindingsBehavior],
 
   storeBindings: {
     store,
-    fields: ['isShow', 'songListDetail']
+    fields: ['songList']
   },
   /**
    * 组件的属性列表
    */
   properties: {
-
+    
   },
 
   /**
@@ -31,15 +30,13 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onLoad() {
-      this.createAudio()
-    },
+    play(event){
+       const songData = event.currentTarget.dataset.songdata
+    }
+  },
 
-    // 创建 audio
-    createAudio() {
-      app.globalData.audio = wx.createInnerAudioContext()
-      console.log(app.globalData.audio)
+  lifetimes: {
+    attached: function() {
     }
   }
-
 })

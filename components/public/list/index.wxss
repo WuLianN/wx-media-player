@@ -1,0 +1,39 @@
+.list {
+  width: 100vw;
+  height: 80vh;
+  overflow: scroll;
+}
+
+.result {
+  width: 90vw;
+  height: 8vh;
+  /* border: 1px solid red; */
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.result-index {
+  width: 10vw;
+  height: 7vh;
+  font-size: 2.5vh;
+  line-height: 7vh;
+  text-align: center;
+  color: gray;
+  text-indent: -5vw;
+}
+
+.songName {
+  color: black;
+  font-size: 2.5vh;
+  position: absolute;
+  top: 1vh;
+}
+
+.songArtist {
+  color: gray;
+  font-size: 1.8vh;
+  position: absolute;
+  bottom: 1vh;
+}

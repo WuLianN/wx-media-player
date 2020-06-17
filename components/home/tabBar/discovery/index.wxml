@@ -1,2 +1,5 @@
-<!--components/home/tabBar/discovery/index.wxml-->
+
 <banner banner="{{banner}}" />
+
+
+<recommentList songListData="{{songListData}}" />

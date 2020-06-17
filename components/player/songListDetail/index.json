@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "Header": "/components/public/header/index",
+    "List": "/components/public/list/index"
+  }
+}

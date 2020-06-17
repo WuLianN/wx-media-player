@@ -1,0 +1,21 @@
+<view class="recommentList">
+  <view class="recommentList-header">
+    <view class="recommentList-header-firstTitle">推荐歌单</view>
+    <!-- <view class="recommentList-header-view-wrap" @touchstart="goSongList">
+      <view class="recommentList-header-leftview"></view>
+      <view class="recommentList-header-lastTitle">歌单广场</view>
+      <view class="recommentList-header-rightview"></view>
+    </view> -->
+  </view>
+  <view class="recommentList-show-wrap">
+    <view class="recommentList-show" bindtap="getSongListData" data-songListData="{{item}}" wx:for="{{songListData}}">
+      <image class="recommentList-show-img" src="{{item.picUrl}}"></image>
+      <view class="recommentList-show-count-wrap">
+        <image class="recommentList-show-count-img" src="/assets/discovery/play-icon.png"></image>
+        <view class="recommentList-show-count">{{ item.playCount }}</view>
+      </view>
+
+      <view class="recommentList-show-title">{{ item.name}}</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,108 @@
+.recommentList {
+  width: 100vw;
+  height: 60vh;
+  border-top: 1px solid rgba(128, 128, 128, 0.089);
+}
+
+.recommentList-header {
+  width: 93vw;
+  height: 5vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.recommentList-header-span-wrap {
+  width: 21vw;
+  height: 3vw;
+  display: flex;
+  align-items: center;
+}
+
+.recommentList-header-firstTitle {
+  font-size: 2.5vh;
+  font-weight: bold;
+  line-height: 5vh;
+}
+
+.recommentList-header-leftSpan {
+  display: inline-block;
+  width: 3vw;
+  height: 3vh;
+  border-top-left-radius: 70%;
+  border-bottom-left-radius: 70%;
+  border-top: 1px solid rgba(128, 128, 128, 0.295);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.295);
+  border-left: 1px solid rgba(128, 128, 128, 0.295);
+}
+
+.recommentList-header-lastTitle {
+  display: inline-block;
+  width: 14vw;
+  height: 3vh;
+  border-top: 1px solid rgba(128, 128, 128, 0.295);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.295);
+  text-align: center;
+  font-size: 1.9vh;
+  color: rgb(65, 59, 59);
+}
+
+.recommentList-header-rightSpan {
+  display: inline-block;
+  width: 3vw;
+  height: 3vh;
+  border-top-right-radius: 70%;
+  border-bottom-right-radius: 70%;
+  border-top: 1px solid rgba(128, 128, 128, 0.295);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.295);
+  border-right: 1px solid rgba(128, 128, 128, 0.295);
+}
+
+.recommentList-show-wrap {
+  width: 100vw;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.recommentList-show {
+  margin: 1vh 0 1vh 2.5vw;
+  position: relative;
+}
+
+.recommentList-show-img {
+  width: 30vw;
+  height: 30vw;
+  border-radius: 5%;
+}
+
+.recommentList-show-title {
+  width: 30vw;
+  height: 6vh;
+  font-size: 2.1vh;
+  color: black;
+  font-weight: 530;
+}
+
+.recommentList-show-count-wrap {
+  width: 15vw;
+  height: 3vh;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  top: 0;
+  right: 0.8vw;
+}
+
+.recommentList-show-count-img {
+  width: 4vw;
+  height: 2vh;
+}
+
+.recommentList-show-count {
+  font-size: 1.8vh;
+  color: white;
+}/* components/home/tabBar/discovery/recomment/index.wxss */

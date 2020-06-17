@@ -3,4 +3,5 @@
 <view class="home">
   <tabBar />
 
+  <songListDetail songListDetail="{{songListDetail}}" style="display: {{isShow ? 'block' : 'none'}}" />
 </view>
