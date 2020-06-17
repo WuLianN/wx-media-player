@@ -1,0 +1,11 @@
+{
+  "component": true,
+  "usingComponents": {
+    "login": "./login/index",
+    "user": "./user/index",
+    "discovery": "./discovery/index",
+    "friends": "./friends/index",
+    "video": "./video/index",
+    "search": "./search/index"
+  }
+}

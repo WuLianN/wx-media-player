@@ -1,0 +1,12 @@
+/* components/home/navBar/index.wxss */
+
+.img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -35%);
+}
+
+.van-tabbar-item__text {
+  font-size: 16px;
+}

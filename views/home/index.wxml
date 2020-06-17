@@ -1,0 +1,6 @@
+<!--views/index/index.wxml-->
+
+<view class="home">
+  <tabBar />
+
+</view>

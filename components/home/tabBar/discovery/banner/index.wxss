@@ -1,0 +1,23 @@
+.banner {
+  width: 90vw;
+  height: 350rpx;
+  margin: 0 auto;
+  border-radius: 4%;
+}
+
+.banner-img {
+  width: 90vw;
+  height: 350rpx;
+}
+
+.banner-type {
+  height: 60rpx;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 24rpx;
+  color: white;
+  line-height: 60rpx;
+  border-top-left-radius: 20%;
+  text-align: center;
+}
