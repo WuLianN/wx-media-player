@@ -2,7 +2,7 @@
   "component": true,
   "usingComponents": {
     "tabBar": "/components/home/tabBar/index",
-
-    "songListDetail": "/components/player/songListDetail/index"
+    "globalPlayer": "/components/home/globalPlayer/index",
+    "songListDetail": "/components/public/songListDetail/index"
   }
 }

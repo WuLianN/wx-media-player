@@ -5,18 +5,24 @@ import {
   store
 } from '../../../store/index.js'
 
+import api from '../../../api/index.js'
+
 Component({
   behaviors: [storeBindingsBehavior],
 
   storeBindings: {
     store,
-    fields: ['songList']
+    fields: ['songList'],
+    actions: {
+      setUrl: 'setUrl',
+      setSongData: 'setSongData'
+    }
   },
   /**
    * 组件的属性列表
    */
   properties: {
-    
+
   },
 
   /**
@@ -30,13 +36,26 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    play(event){
-       const songData = event.currentTarget.dataset.songdata
-    }
-  },
+    // 播放
+    play(event) {
+      const songData = event.currentTarget.dataset.songdata
+      const {
+        id
+      } = songData
 
-  lifetimes: {
-    attached: function() {
+      // 存储songData
+      this.setSongData(songData)
+
+      const timestamp = +new Date()
+      this.getUrl(id, timestamp)
+    },
+
+    // 获取url
+    getUrl(id) {
+      api.getUrl(id).then(res => {
+        const url = res.data.data[0].url
+        this.setUrl(url)
+      })
     }
   }
 })

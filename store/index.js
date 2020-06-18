@@ -5,28 +5,35 @@ import {
 
 export const store = observable({
   // 数据字段
-  isShow: false,
-  songListDetail: null,
-  songList: null,
+  isShow: false, // 显示歌单信息页
+  songListDetail: null, // 歌单信息
+  songList: null, // 歌单的歌曲
+  songData: null, // 歌曲信息
+  url: '', // 歌曲url
 
   // 显示 songListDetail
-  openSongListDetail: action(function (value) {
+  isShowSongListDetail: action(function(value) {
     this.isShow = value
-    
+
   }),
-  
-  // 隐藏 songListDetail
-  closeSongListDetail: action(function() {
-    this.isShow = false
-  }),
-  
-  // 设置歌单数据
-  setSongListData: action(function (value){
+
+  // 歌单信息
+  setSongListData: action(function(value) {
     this.songListDetail = value
   }),
 
-  // 歌单
-  setSongList: action(function(value){
+  // 歌单的歌曲
+  setSongList: action(function(value) {
     this.songList = value
+  }),
+
+  // 歌曲信息
+  setSongData: action(function(value) {
+    this.songData = value
+  }),
+
+  // 歌曲url
+  setUrl: action(function(value) {
+    this.url = value
   })
 })

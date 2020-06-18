@@ -1,5 +1,19 @@
-// components/normal/header/index.js
+import {
+  storeBindingsBehavior
+} from 'mobx-miniprogram-bindings'
+import {
+  store
+} from '../../../store/index.js'
+
 Component({
+  behaviors: [storeBindingsBehavior],
+
+  storeBindings: {
+    store,
+    actions: {
+      isShowSongListDetail: 'isShowSongListDetail'
+    }
+  },
   /**
    * 组件的属性列表
    */
@@ -23,8 +37,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onclickLeft(){
-
+    onClickLeft(){
+       this.isShowSongListDetail(false)
     }
   }
 })

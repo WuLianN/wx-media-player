@@ -12,7 +12,7 @@ Component({
     store,
     field: ['songListData'],
     actions: {
-      openSongListDetail: 'openSongListDetail',
+      isShowSongListDetail: 'isShowSongListDetail',
       setSongListData: 'setSongListData'
     }
   },
@@ -36,7 +36,7 @@ Component({
   methods: {
     getSongListData(event){
       const data = event.currentTarget.dataset.songlistdata
-      this.openSongListDetail(true)
+      this.isShowSongListDetail(true)
       this.setSongListData(data)
     }
   },
