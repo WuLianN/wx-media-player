@@ -1,15 +1,14 @@
 .header {
   width: 100vw;
-  height: 7vh;
+  height: 11vw;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  background: red;
 }
 
 .header-arrow {
-  width: 10vw;
-  height: 7vh;
+  width: 11vw;
+  height: 11vw;
   position: relative;
   left: 3vw;
   display: flex;
@@ -17,10 +16,10 @@
   justify-content: center;
 }
 
-.img {
+.header-arrow-img {
   position: relative;
-  width: 10vw;
-  height: 7vh;
+  width: 11vw;
+  height: 11vw;
 }
 
 .headerTitle {

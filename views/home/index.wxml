@@ -3,7 +3,7 @@
 <view class="home">
   <tabBar />
 
-  <globalPlayer songData="{{_songData}}" />
+  <globalPlayer />
 
   <songListDetail songListDetail="{{songListDetail}}" style="display: {{isShow ? 'block' : 'none'}}" />
 </view>

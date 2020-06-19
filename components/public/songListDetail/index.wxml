@@ -1,62 +1,63 @@
 <view class="songListDetail">
-  <Header />
-  <!-- <Header :leftTitle="leftTitle" :where="songList" :active="active" />
-    <van-notice-bar class="mask" v-if="isShowMask" background="transparent">{{ songlistData.name }}</van-notice-bar> -->
+  <Header leftTitle="{{leftTitle}}" />
 
-  <!-- <view class="main">
-    <image class="main-info-image" src="{{songlistData.coverimageUrl}}"></image>
-    <view class="main-info-count">{{ songlistData.playCount }}</view>
+  <!-- <van-notice-bar class="mask" wx:if="isShowMask" background="transparent">{{ songlistData.name }}</van-notice-bar> -->
+
+
+  <view class="main">
+    <image class="main-info-image" src="{{songListDetail.picUrl}}"></image>
+    <view class="main-info-count">{{ songListDetail.playCount }}</view>
     <view class="main-info-content">
-      <view class="main-info-title">{{ songlistData.name  }}</view>
+      <view class="main-info-title">{{ songListDetail.name }}</view>
       <view class="main-info-creator">
         <image class="main-info-creator-image" src="{{songlistData.avatarUrl}}" wx:if="{{songlistData.avatarUrl}}"></image>
-        <view>{{ songlistData.nickname }}</view>
+        <view>{{ songListDetail.nickname }}</view>
       </view>
-      <view class="main-info-des">{{ songlistData.description }}</view>
+      <view class="main-info-des">{{ songListDetail.description }}</view>
     </view>
-  </view> -->
+  </view>
 
-  <!-- <view class="nav">
-      <view class="nav-title" @touchend="goComment">
-        <image :style="{ paddingTop: '0.5vh'}" src="@/assets/comment.png"></image>
-        <view :style="{ marginTop: '-0.5vh'}" class="nav-title-info">{{ songlistData.commentCount }}</view>
-      </view>
-
-      <view class="nav-title">
-        <image src="@/assets/share.png" alt />
-        <view class="nav-title-info">{{ songlistData.shareCount }}</view>
-      </view>
-
-      <view class="nav-title">
-        <image src="@/assets/download.png" alt />
-        <view class="nav-title-info">下载</view>
-      </view>
-
-      <view class="nav-title">
-        <image src="@/assets/select.png" alt />
-        <view class="nav-title-info">多选</view>
-      </view>
+  <view class="nav">
+    <view class="nav-title" bindtap="goComment">
+      <image class="nav-img" src="/assets/comment.png"></image>
+      <view class="nav-title-info">{{ songListDetail.playCount || comment}}</view>
     </view>
 
-  <view class="footer" class="{{ active: isActive }}" @touchstart="getStart" @touchend="getEnd" @touchmove="touchMove">
+    <view class="nav-title">
+      <image class="nav-img" src="/assets/share.png" alt></image>
+      <view class="nav-title-info">{{ share }}</view>
+    </view>
+
+    <view class="nav-title">
+      <image class="nav-img" src="/assets/download.png" alt></image>
+      <view class="nav-title-info">下载</view>
+    </view>
+
+    <view class="nav-title">
+      <image class="nav-img" src="/assets/select.png" alt></image>
+      <view class="nav-title-info">多选</view>
+    </view>
+  </view>
+
+  <view class=" footer {{ isActive === true ? 'active' : '' }}" bindtouchstart="getStart" bindtouchend="getEnd" bindtouchmove="touchMove">
     <view class="footer-header">
       <view class="toCircle-left"></view>
       <view class="footer-header-image-wrap">
-        <image class="footer-header-image" src="@/assets/pause-gray.png"></image>
+        <image class="footer-header-image" src="/assets/player/pause-gray.png"></image>
       </view>
       <view class="footer-header-title">
         <view class="footer-header-titleName">播放全部</view>
-        <view class="footer-header-titleCount">(共{{ songlistData.trackCount}}首)</view>
+        <view class="footer-header-titleCount">(共{{ songListDetail.trackCount}}首)</view>
       </view>
       <view class="toCircle-right"></view>
-    </view> -->
+    </view>
 
-    <view>{{songList[0].id}}</view>
-
-  <view class="footer-list" ref="footList">
-    <List />
+    <view class="footer-list">
+      <custom-list wx:if="{{_songList}}" songList="{{_songList}}" />
+    </view>
   </view>
-  <!-- </view>  -->
 
-  <image class="songListDetail-bg" src="{{songlistData.coverimageUrl}}"></image>
+  <globalPlayer />
+
+  <image class="songListDetail-bg" src="{{songListDetail.picUrl}}"></image>
 </view>

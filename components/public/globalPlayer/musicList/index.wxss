@@ -1,0 +1,17 @@
+.musicList {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.mask {
+  width: 100vw;
+  height: 40vh;
+  background: rgba(0, 0, 0, 0.349);
+}
+
+.list {
+  background: white;
+}

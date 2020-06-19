@@ -1,0 +1,21 @@
+<view class="nav">
+    <view class="nav-title" bindtap="goComment">
+      <image style="paddingTop: {{ '0.5vh'}}" src="/assets/comment.png"></image>
+      <view style="marginTop: {{ '-0.5vh'}}" class="nav-title-info">{{ songListDetail.commentCount }}</view>
+    </view>
+
+    <view class="nav-title">
+      <image src="/assets/share.png" alt />
+      <view class="nav-title-info">{{ songListDetail.shareCount }}</view>
+    </view>
+
+    <view class="nav-title">
+      <image src="/assets/download.png" alt />
+      <view class="nav-title-info">下载</view>
+    </view>
+
+    <view class="nav-title">
+      <image src="/assets/select.png" alt />
+      <view class="nav-title-info">多选</view>
+    </view>
+  </view>

@@ -12,7 +12,6 @@ Component({
 
   storeBindings: {
     store,
-    fields: ['songList'],
     actions: {
       setUrl: 'setUrl',
       setSongData: 'setSongData'
@@ -22,7 +21,7 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    songList: Array
   },
 
   /**

@@ -1,0 +1,6 @@
+<view class="musicList">
+  <view class="mask"bindtap="closeMask"></view>
+  <view class="list">
+    <custom-list songList="{{ songList }}" />
+  </view>
+</view>

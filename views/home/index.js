@@ -37,26 +37,12 @@ Component({
 
     // 创建 audio
     createAudio() {
-      app.globalData.audio = wx.createInnerAudioContext()
+      const audio = app.globalData.audio = wx.createInnerAudioContext()
+      audio.onPause().then(res => {
+        
+      })
+
       console.log(app.globalData.audio)
     }
-  },
-
-  observers: {
-     'url': function(url){
-       console.log(url)
-
-       if(url){
-         const audio = app.globalData.audio
-         audio.src = url
-         audio.autoplay = true
-
-         // 更新globalPlayer
-         this.setData({
-           _songData: this.data.songData
-         })
-       }
-     }
   }
-
 })

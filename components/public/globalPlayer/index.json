@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "custom-player": "/components/player/index",
+    "custom-musicList": "./musicList/index"
+  }
+}

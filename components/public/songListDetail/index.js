@@ -11,8 +11,10 @@ Component({
 
   storeBindings: {
     store,
+    fields: ["songList"],
     actions: {
-      setSongList: 'setSongList'
+      setSongList: 'setSongList',
+      setAllSongId: 'setAllSongId'
     }
   },
   /**
@@ -26,7 +28,14 @@ Component({
    * 组件的初始数据
    */
   data: {
-
+    leftTitle: '歌单',
+    _songList: null,
+    share: '分享',
+    comment: '评论',
+    startTouches: '',
+    endTouches: '',
+    scrollTop: 0,
+    isActive: false
   },
 
   /**
@@ -40,6 +49,10 @@ Component({
         const ids = result.map(item => {
           return item.id
         })
+
+        // 存储 歌单的所有歌曲id
+        this.setAllSongId(ids)
+
         const standardIds = ids.toString()
         this.getSongDetail(standardIds)
       })
@@ -61,8 +74,70 @@ Component({
         })
 
         this.setSongList(purifyRes)
+        this.setData({
+          _songList: purifyRes
+        })
       })
-    }
+    },
+
+    getStart(e) {
+      // 第一个触点
+      this.setData({
+        startTouches: e.touches
+      })
+    },
+
+    getEnd(e) {
+      // 最后一个触点
+      this.setData({
+        endTouches: e.changedTouches
+      })
+
+      console.log(e.changedTouches)
+
+      const query = wx.createSelectorQuery()
+      query.select('.footer-list >>> .list').boundingClientRect()
+      query.selectViewport().scrollOffset()
+
+      let _this = this
+      query.exec(function(res) {
+        _this.setData({
+          scrollTop: res[1].scrollTop
+        })
+      })
+
+      this.slide()
+    },
+
+    touchMove() {
+      // this.slide();
+    },
+
+    slide() {
+      if (this.data.startTouches.length > 0 && this.data.endTouches.length > 0) {
+        // 起点
+        const startClientX = this.data.startTouches[0].clientX
+        const startClientY = this.data.startTouches[0].clientY
+
+        // 终点
+        const endClientX = this.data.endTouches[0].clientX
+        const endClientY = this.data.endTouches[0].clientY
+
+        if (startClientY - endClientY > 0) {
+          // 上划
+          this.setData({
+            isActive: true,
+            leftTitle: ''
+          })
+        } else if (this.data.scrollTop === 0) {
+          // 下滑
+          this.setData({
+            isActive: false,
+            leftTitle: '歌单'
+          })
+        }
+      }
+    },
   },
 
   observers: {
@@ -72,10 +147,9 @@ Component({
       if (songListDetail) {
         const id = songListDetail.id
 
+        // 获取songList
         this.getSongList(id)
       }
-
-
     }
   }
 })
