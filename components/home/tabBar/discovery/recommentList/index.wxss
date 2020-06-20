@@ -1,6 +1,6 @@
 .recommentList {
   width: 100vw;
-  height: 60vh;
+  height: 65vh;
   border-top: 1px solid rgba(128, 128, 128, 0.089);
 }
 
@@ -22,7 +22,7 @@
 }
 
 .recommentList-header-firstTitle {
-  font-size: 2.5vh;
+  font-size: 32rpx;
   font-weight: bold;
   line-height: 5vh;
 }
@@ -105,4 +105,4 @@
 .recommentList-show-count {
   font-size: 1.8vh;
   color: white;
-}/* components/home/tabBar/discovery/recomment/index.wxss */
+}

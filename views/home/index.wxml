@@ -1,7 +1,10 @@
 <!--views/index/index.wxml-->
 
 <view class="home">
+
+
   <tabBar />
+
 
   <globalPlayer />
 

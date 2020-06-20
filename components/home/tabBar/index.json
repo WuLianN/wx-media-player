@@ -1,11 +1,11 @@
 {
   "component": true,
   "usingComponents": {
-    "login": "./login/index",
-    "user": "./user/index",
-    "discovery": "./discovery/index",
-    "friends": "./friends/index",
-    "video": "./video/index",
-    "search": "./search/index"
+    "custom-login": "./login/index",
+    "custom-user": "./user/index",
+    "custom-discovery": "./discovery/index",
+    "custom-friends": "./friends/index",
+    "custom-video": "./video/index",
+    "custom-search": "./search/index"
   }
 }

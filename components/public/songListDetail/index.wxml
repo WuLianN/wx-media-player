@@ -19,22 +19,22 @@
 
   <view class="nav">
     <view class="nav-title" bindtap="goComment">
-      <image class="nav-img" src="/assets/comment.png"></image>
+      <image class="nav-img" src="/assets/songListDetail/comment.png"></image>
       <view class="nav-title-info">{{ songListDetail.playCount || comment}}</view>
     </view>
 
     <view class="nav-title">
-      <image class="nav-img" src="/assets/share.png" alt></image>
+      <image class="nav-img" src="/assets/songListDetail/share.png" alt></image>
       <view class="nav-title-info">{{ share }}</view>
     </view>
 
     <view class="nav-title">
-      <image class="nav-img" src="/assets/download.png" alt></image>
+      <image class="nav-img" src="/assets/songListDetail/download.png" alt></image>
       <view class="nav-title-info">下载</view>
     </view>
 
     <view class="nav-title">
-      <image class="nav-img" src="/assets/select.png" alt></image>
+      <image class="nav-img" src="/assets/songListDetail/select.png" alt></image>
       <view class="nav-title-info">多选</view>
     </view>
   </view>
@@ -57,7 +57,7 @@
     </view>
   </view>
 
-  <globalPlayer />
+  <!-- <globalPlayer /> -->
 
   <image class="songListDetail-bg" src="{{songListDetail.picUrl}}"></image>
 </view>

@@ -1,0 +1,17 @@
+<view class="controls">
+  <view class="controls-playStyle">
+    <image src="/assets/player/loop.png" bindtap="playStyle" class="controls-img"></image>
+  </view>
+  <view class="controls-pre" bindtap="preSong">
+    <image src="/assets/player/previous.png" alt class="controls-img"></image>
+  </view>
+  <view class="controls-switch" bindtap="playOrPause">
+    <image src="/assets/player/play-white.png" alt class="controls-img"></image>
+  </view>
+  <view class="controls-next" bindtap="nextSong">
+    <image src="/assets/player/nextsong.png" alt class="controls-img"></image>
+  </view>
+  <view class="controls-musicList" bindtap="musicList">
+    <image src="/assets/player/musiclist.png" alt class="controls-img"></image>
+  </view>
+</view>

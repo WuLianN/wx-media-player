@@ -1,4 +1,4 @@
-<swiper class="banner" indicator-dots="true" autoplay="true" circular="true" indicator-active-color="white">
+<swiper class="banner" indicator-dots="true" autoplay="true" circular="true" indicator-active-color="white" >
   <swiper-item wx:for="{{banner}}">
     <image class="banner-img" src="{{item.picUrl}}" bindtag="getBannerInf(item)"></image>
     <view class="banner-type" style="background: {{item.typeTitle === '独家' ? 'red': '#3366FF' }} ; width: {{item.typeTitle.length > 2 ? '18vw': '10vw'}} ">{{ item.typeTitle }}</view>

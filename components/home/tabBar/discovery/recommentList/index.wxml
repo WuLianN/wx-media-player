@@ -1,7 +1,7 @@
 <view class="recommentList">
   <view class="recommentList-header">
     <view class="recommentList-header-firstTitle">推荐歌单</view>
-    <!-- <view class="recommentList-header-view-wrap" @touchstart="goSongList">
+    <!-- <view class="recommentList-header-view-wrap" bindtap="goSongList">
       <view class="recommentList-header-leftview"></view>
       <view class="recommentList-header-lastTitle">歌单广场</view>
       <view class="recommentList-header-rightview"></view>

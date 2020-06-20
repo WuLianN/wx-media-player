@@ -1,5 +1,5 @@
+<banner banner="{{banner}}" />
 
-<!-- <banner banner="{{banner}}" /> -->
-
+<nav />
 
 <recommentList songListData="{{songListData}}" />

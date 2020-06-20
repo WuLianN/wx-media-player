@@ -14,6 +14,7 @@ Component({
     store,
     actions: {
       setUrl: 'setUrl',
+      setId: 'setId',
       setSongData: 'setSongData'
     }
   },
@@ -45,13 +46,16 @@ Component({
       // 存储songData
       this.setSongData(songData)
 
+      // 存储id
+      this.setId(id)
+
       const timestamp = +new Date()
       this.getUrl(id, timestamp)
     },
 
     // 获取url
-    getUrl(id) {
-      api.getUrl(id).then(res => {
+    getUrl(id, timestamp) {
+      api.getUrl(id, timestamp).then(res => {
         const url = res.data.data[0].url
         this.setUrl(url)
       })

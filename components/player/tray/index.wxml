@@ -1,0 +1,23 @@
+<view style="display: {{ isPlayerOrlyrics === true ? 'block' : 'none'}}" class="player-tray">
+  <view class="player-record" style=" transform: {{ rotate }}">
+    <image alt class="player-img" src="{{}}"></image>
+  </view>
+
+  <view class="user-function">
+    <view class="user-function-icon" bindtap="isCollect">
+      <image src="/assets/player/collect.png" class="user-img" alt></image>
+    </view>
+
+    <view class="user-function-icon">
+      <image src="/assets/player/download.png" class="user-img" alt></image>
+    </view>
+
+    <view class="user-function-icon">
+      <image src="/assets/player/message.png" class="user-img" alt></image>
+    </view>
+
+    <view class="user-function-icon">
+      <image src="/assets/player/share.png" class="user-img" alt></image>
+    </view>
+  </view>
+</view>

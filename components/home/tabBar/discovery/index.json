@@ -2,6 +2,7 @@
   "component": true,
   "usingComponents": {
     "banner": "./banner/index",
+    "nav": "./nav/index",
     "recommentList": "./recommentList/index"
   }
 }

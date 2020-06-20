@@ -123,6 +123,8 @@ Component({
         const endClientX = this.data.endTouches[0].clientX
         const endClientY = this.data.endTouches[0].clientY
 
+        console.log(this.data.scrollTop)
+
         if (startClientY - endClientY > 0) {
           // 上划
           this.setData({

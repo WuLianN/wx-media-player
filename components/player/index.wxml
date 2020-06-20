@@ -1,0 +1,38 @@
+<view class="player">
+  <!-- 导航 -->
+  <view class="player-nav">
+    <view class="player-nav-arrow" bindtap="onClickLeft">
+      <image src="/assets/arrow-left.png"></image>
+    </view>
+    <view class="player-nav-song">
+      <view class="player-song-name">{{ songName }}</view>
+      <view class="player-song-artist">{{ songArtist }}</view>
+    </view>
+  </view>
+
+  <!-- 内容 -->
+
+  <view bindtap="exchange" class="player-content">
+    <!-- 音乐转盘 -->
+
+    <!-- 歌词 -->
+    <!-- <view class="player-lyric" ref="scrollWrap">
+      <view v-show="!isPlayerOrlyrics" class="player-lyrics-wrap" ref="scroll">
+        <p v-for="(item, index) in lyric[0]" :key="index" :time="item.time" ref="p" class="player-lyrics" :class="{ active: isActive === index}">{{ item.lyrics }}</p>
+      </view>
+    </view> -->
+  </view>
+
+  <!-- 底部 -->
+
+  <view class="player-footer">
+    <!-- 进度条 -->
+
+
+    <!-- 控制 -->
+
+  </view>
+
+  <!-- 高斯模糊背景图片 -->
+  <image src="{{picUrl}}" alt class="player-bg"></image>
+</view>

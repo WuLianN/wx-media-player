@@ -1,9 +1,17 @@
 App({
   onLaunch: function() {
+    onShow: {
+      // const audio = this.globalData.audio = wx.createInnerAudioContext()
+     
+      // audio.onPause(function() {
+      //   console.log(1)
+      // })
 
-    // wx.navigateTo({
-    //   url: '/views/home/index'
-    // })
+      // audio.onEnded(function(){
+
+      // })
+
+    }
 
   },
   globalData: {

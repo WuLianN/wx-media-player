@@ -10,3 +10,9 @@
 .van-tabbar-item__text {
   font-size: 16px;
 }
+
+.tab-bar-content {
+  width: 100vw;
+  height: 83vh;
+  overflow: scroll;
+}

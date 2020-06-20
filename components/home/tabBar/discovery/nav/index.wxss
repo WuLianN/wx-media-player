@@ -1,0 +1,50 @@
+.tab-bar {
+  width: 80vw;
+  height: 10vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.5vh auto;
+}
+
+.category {
+  width: 15vw;
+  height: auto;
+}
+
+.category-content {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 auto;
+  background: red;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.soner-img {
+  width: 60%;
+  height: 60%;
+  margin: 0 auto;
+}
+
+.rankList-img {
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+}
+
+.musicList-img {
+  width: 85%;
+  height: 85%;
+  margin: 0 auto;
+}
+
+.category-title {
+  width: 15vw;
+  height: 4vh;
+  text-align: center;
+  font-size: 28rpx;
+}

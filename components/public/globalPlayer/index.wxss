@@ -3,11 +3,11 @@
   height: 16vw;
   display: flex;
   flex-flow: row nowrap;
-  border-top: 1px solid rgba(209, 194, 194, 0.801);
+  border-top: 0.5px solid rgba(209, 194, 194, 0.801);
   background: white;
   position: fixed;
   bottom: 0;
-  z-index: 100;
+  z-index: 200;
 }
 
 .player-detail {

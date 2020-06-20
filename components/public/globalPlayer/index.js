@@ -75,17 +75,6 @@ Component({
       this.setData({
         isShowMask: false
       })
-    },
-
-    isOtherSongList(id) {
-      const songList = this.data.songList
-      const result = songList.indexOf(id)
-
-      if (result !== -1) {
-        return false
-      } else {
-        return true
-      }
     }
   },
 
@@ -103,19 +92,6 @@ Component({
         this.setData({
           playerStatus: playImg
         })
-
-        // 是否更换歌单
-        // const {
-        //   id
-        // } = this.data.songData
-
-        // const shouldChange = this.isOtherSongList(id)
-
-        // if (shouldChange){
-        //   this.setData({
-        //     _songList: this.data.songList
-        //   })
-        // }
 
         this.setData({
           _songList: this.data.songList

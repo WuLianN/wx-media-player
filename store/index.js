@@ -3,8 +3,6 @@ import {
   action
 } from 'mobx-miniprogram'
 
-import audioStore from './audio.js'
-
 export const store = observable({
   isShow: false, // 显示歌单信息页
   songListDetail: null, // 歌单信息
@@ -12,6 +10,7 @@ export const store = observable({
   allSongId: null, // 歌单的所有歌曲id
   songData: null, // 歌曲信息
   url: '', // 歌曲url
+  id: 0, // 歌曲id
 
   // 显示 songListDetail
   isShowSongListDetail: action(function(value) {
@@ -41,6 +40,11 @@ export const store = observable({
   // 歌曲url
   setUrl: action(function(value) {
     this.url = value
+  }),
+
+  // 歌曲id
+  setId: action(function(value) {
+    this.id = value
   }),
 
   /** audio 播放器 */

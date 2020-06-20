@@ -1,0 +1,29 @@
+<view class="tab-bar">
+  <view class="category" bindtap="goSingers">
+    <view class="category-content">
+      <image src="/assets/discovery/songer.png" class="soner-img" alt></image>
+    </view>
+    <view class="category-title">歌手</view>
+  </view>
+
+  <view class="category">
+    <view class="category-content" bindtap="goSongList">
+      <image src="/assets/discovery/musiclist.png" class="musicList-img" alt></image>
+    </view>
+    <view class="category-title">歌单</view>
+  </view>
+
+  <view class="category" bindtap="goRankList">
+    <view class="category-content">
+      <image src="/assets/discovery/rankList.png" class="rankList-img" alt></image>
+    </view>
+    <view class="category-title">排行榜</view>
+  </view>
+
+  <view class="category">
+    <view class="category-content" bindtap="goMV">
+      <image src="/assets/discovery/MV.png" class="musicList-img" alt></image>
+    </view>
+    <view class="category-title">MV</view>
+  </view>
+</view>
