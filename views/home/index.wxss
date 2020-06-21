@@ -1,7 +1,6 @@
 /* views/index/index.wxss */
 
-.home{
+.home {
   width: 100vw;
   height: 100vh;
 }
-

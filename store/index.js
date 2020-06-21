@@ -11,6 +11,7 @@ export const store = observable({
   songData: null, // 歌曲信息
   url: '', // 歌曲url
   id: 0, // 歌曲id
+  nextIdIndex: 0,
 
   // 显示 songListDetail
   isShowSongListDetail: action(function(value) {
@@ -45,6 +46,11 @@ export const store = observable({
   // 歌曲id
   setId: action(function(value) {
     this.id = value
+  }),
+  
+  // 下一个ID的索引
+  setNextIdIndex: action(function(value){
+    this.nextIdIndex = value
   }),
 
   /** audio 播放器 */

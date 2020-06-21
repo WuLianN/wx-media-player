@@ -13,7 +13,6 @@
     "van-tab": "@vant/weapp/tab/index",
     "van-tabs": "@vant/weapp/tabs/index",
     "van-tabbar": "@vant/weapp/tabbar/index",
-    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
-    "globalPlayer": "/components/public/globalPlayer/index"
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index"
   }
 }

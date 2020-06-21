@@ -1,4 +1,9 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "custom-tray": "./tray/index",
+    "custom-lyric": "./lyric/index",
+    "custom-controls": "./controls/index",
+    "custom-progress": "./progress/index"
+  }
 }

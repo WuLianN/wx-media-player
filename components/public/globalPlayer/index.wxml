@@ -6,9 +6,9 @@
     </view>
 
     <!-- 歌曲、作者 -->
-    <view class="song-info">
-      <view class="song-name">{{ songData.songName }}</view>
-      <view class="song-artist">{{ songData.artist }}</view>
+    <view class="song-info" bindtap="showPlayer" data-status="{{true}}">
+      <view class="song-name" wx:if="{{songData}}">{{ songData.songName }}</view>
+      <view class="song-artist" wx:if="{{songData}}">{{ songData.artist }}</view>
     </view>
   </view>
 
@@ -21,6 +21,7 @@
     <image src="{{ musicList }}" bindtap="musicList" class="song-player-img"></image>
   </view>
 
-  <!-- <custom-player /> -->
-  <custom-musicList songList="{{ _songList }}" bindcloseMaskEvent="closeMask" style="display: {{ isShowMask === true ? 'block' : 'none' }}" />
+  <custom-player style="display: {{isShowPlayer === true ? 'block' : 'none'}}" bindunshowPlayer="unshowPlayer" songData="{{songData}}" />
+
+  <custom-musicList songList="{{ _songList }} " bindcloseMaskEvent="closeMask " style="display: {{ isShowMask===true ? 'block' : 'none' }} " />
 </view>

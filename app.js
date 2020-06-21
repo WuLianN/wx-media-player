@@ -1,19 +1,5 @@
 App({
-  onLaunch: function() {
-    onShow: {
-      // const audio = this.globalData.audio = wx.createInnerAudioContext()
-     
-      // audio.onPause(function() {
-      //   console.log(1)
-      // })
-
-      // audio.onEnded(function(){
-
-      // })
-
-    }
-
-  },
+  onLaunch: function() {},
   globalData: {
     audio: null
   }

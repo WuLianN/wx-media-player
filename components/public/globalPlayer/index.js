@@ -5,6 +5,8 @@ import {
   store
 } from '../../../store/index.js'
 
+import api from '../../../api/index.js'
+
 const app = new getApp()
 
 Component({
@@ -12,7 +14,7 @@ Component({
 
   storeBindings: {
     store,
-    fields: ['url', 'songList', 'songData']
+    fields: ['id', 'nextIdIndex', 'allSongId', 'songList']
   },
 
   /**
@@ -23,7 +25,9 @@ Component({
     playerStatus: '/assets/player/pause-gray.png',
     musicList: '/assets/player/musiclist-gray.png',
     isShowMask: false,
-    _songList: null
+    isShowPlayer: false,
+    _songList: null,
+    songData: ''
   },
 
   /**
@@ -75,26 +79,60 @@ Component({
       this.setData({
         isShowMask: false
       })
-    }
-  },
+    },
 
-  observers: {
-    'url': function(url) {
-      // 存在 url
-      if (url) {
-        // 播放音乐
-        const audio = app.globalData.audio
-        audio.src = url
-        audio.autoplay = true
+    showPlayer() {
+      this.setData({
+        isShowPlayer: true
+      })
+    },
+
+    unshowPlayer(){
+      this.setData({
+        isShowPlayer: false
+      })
+    },
+
+    // 获取url -> 更新url
+    getUrl(id, timestamp) {
+      return api.getUrl(id, timestamp)
+    },
+
+    isOtherSongList(id) {
+      const allSongId = this.data.allSongId
+      if (allSongId.indexOf(id) !== -1) {
+        // 更新songData
+        const index = this.data.allSongId.indexOf(id)
+        const songData = this.data.songList[index]
 
         // 更新播放状态的图标
         const playImg = '/assets/player/play-gray.png'
         this.setData({
-          playerStatus: playImg
+          playerStatus: playImg,
+          songData: songData,
+          _songList: this.data.songList
         })
-
+      } else {
+        // 更新songList
         this.setData({
           _songList: this.data.songList
+        })
+      }
+    }
+  },
+
+  observers: {
+    'id': function(id) {
+      if (id && id !== 0) {
+        // 获取url
+        const timestamp = +new Date()
+        this.getUrl(id, timestamp).then(res => {
+          const url = res.data.data[0].url
+          // 播放音乐
+          const audio = app.globalData.audio
+          audio.src = url
+
+          this.isOtherSongList(id)
         })
       }
     }

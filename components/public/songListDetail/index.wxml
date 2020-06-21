@@ -10,7 +10,7 @@
     <view class="main-info-content">
       <view class="main-info-title">{{ songListDetail.name }}</view>
       <view class="main-info-creator">
-        <image class="main-info-creator-image" src="{{songlistData.avatarUrl}}" wx:if="{{songlistData.avatarUrl}}"></image>
+        <image class="main-info-creator-image" src="{{songListDetail.avatarUrl}}" wx:if="{{songListDetail.avatarUrl}}"></image>
         <view>{{ songListDetail.nickname }}</view>
       </view>
       <view class="main-info-des">{{ songListDetail.description }}</view>
@@ -19,22 +19,22 @@
 
   <view class="nav">
     <view class="nav-title" bindtap="goComment">
-      <image class="nav-img" src="/assets/songListDetail/comment.png"></image>
+      <image class="nav-img" src="/assets/player/comment.png"></image>
       <view class="nav-title-info">{{ songListDetail.playCount || comment}}</view>
     </view>
 
     <view class="nav-title">
-      <image class="nav-img" src="/assets/songListDetail/share.png" alt></image>
+      <image class="nav-img" src="/assets/player/share.png" alt></image>
       <view class="nav-title-info">{{ share }}</view>
     </view>
 
     <view class="nav-title">
-      <image class="nav-img" src="/assets/songListDetail/download.png" alt></image>
+      <image class="nav-img" src="/assets/player/download.png" alt></image>
       <view class="nav-title-info">下载</view>
     </view>
 
     <view class="nav-title">
-      <image class="nav-img" src="/assets/songListDetail/select.png" alt></image>
+      <image class="nav-img" src="/assets/player/select.png" alt></image>
       <view class="nav-title-info">多选</view>
     </view>
   </view>
