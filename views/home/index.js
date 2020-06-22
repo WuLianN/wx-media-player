@@ -11,10 +11,12 @@ Component({
 
   storeBindings: {
     store,
-    fields: ['isShow', 'songListDetail', 'url', 'songData', 'allSongId', 'id'],
+    fields: ['isShow', 'songListDetail', 'url', 'songData', 'allSongId', 'id', 'duration', 'isRandomMode', 'songList'],
     actions: {
       setUrl: 'setUrl',
-      setId: 'setId'
+      setId: 'setId',
+      setDuration: 'setDuration',
+      setCurrentTime: 'setCurrentTime'
     }
   },
   /**
@@ -49,7 +51,17 @@ Component({
 
       // 可以播放状态
       audio.onCanplay(function() {
-     
+
+      })
+
+      audio.onTimeUpdate(function() {
+        // 获取歌曲总长度 -> 存储duration
+        const duration = audio.duration
+        _this.setDuration(duration)
+
+        // 获取当前进度 -> 存储currentTime
+        const currentTime = audio.currentTime
+        _this.setCurrentTime(currentTime)
       })
 
       // 播放
@@ -83,25 +95,37 @@ Component({
     },
 
     getNextSong(_this) {
-      const id = _this.data.id
-      const allSongId = _this.data.allSongId
-      const currentIdIndex = allSongId.indexOf(id)
-      if (currentIdIndex !== -1) {
-        let nextIdIndex
-        let nextSongId
-
-        const theLastIndex = allSongId.length
-
-        if (currentIdIndex === theLastIndex) {
-          nextIdIndex = 0
-          nextSongId = allSongId[nextIdIndex]
-        } else {
-          nextIdIndex = currentIdIndex + 1
-          nextSongId = allSongId[nextIdIndex]
-        }
+      // 判断是否随机模式
+      const isRandomMode = _this.data.isRandomMode
+      if (isRandomMode) {
+        const songList = _this.data.songList
+        const limit = songList.length
+        const randomIndex = Math.floor(Math.random() * limit)
+        const randomId = _this.data.allSongId[randomIndex]
 
         // 存储id -> 更新id
-        _this.setId(nextSongId)
+        _this.setId(randomId)
+      } else {
+        const id = _this.data.id
+        const allSongId = _this.data.allSongId
+        const currentIdIndex = allSongId.indexOf(id)
+        if (currentIdIndex !== -1) {
+          let nextIdIndex
+          let nextSongId
+
+          const theLastIndex = allSongId.length
+
+          if (currentIdIndex === theLastIndex) {
+            nextIdIndex = 0
+            nextSongId = allSongId[nextIdIndex]
+          } else {
+            nextIdIndex = currentIdIndex + 1
+            nextSongId = allSongId[nextIdIndex]
+          }
+
+          // 存储id -> 更新id
+          _this.setId(nextSongId)
+        }
       }
     }
   }

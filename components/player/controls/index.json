@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "custom-musicList": "/components/public/musicList/index"
+  }
 }

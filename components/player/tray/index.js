@@ -1,10 +1,9 @@
-
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-   songData: Object
+    songData: Object
   },
 
   /**
@@ -12,13 +11,13 @@ Component({
    */
   data: {
     picUrl: '/assets/player/recordx.png',
-    rotate: 0
+    rotate: 'rotate({ 0 })'
   },
 
   /**
    * 组件的方法列表
    */
   methods: {
-
+    isCollect() {}
   }
 })

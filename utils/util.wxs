@@ -1,0 +1,20 @@
+ function formatSec(num) {
+   var Tnum = parseInt(num)
+   // var H = this.$toZero(Math.floor(num / 3600));
+   var M = toZero(Math.floor(Tnum % 3600 / 60))
+   var S = toZero(Math.floor(Tnum % 60))
+   // return H + ":" + M + ":" + S;
+   return M + ':' + S
+ }
+
+ function toZero(num) {
+   if (num <= 9) {
+     return '0' + num
+   } else {
+     return '' + num
+   }
+ }
+
+ module.exports = {
+   formatSec: formatSec
+ }

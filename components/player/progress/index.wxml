@@ -1,9 +1,10 @@
 <view class="progress">
-  <view class="progress-currentTime">{{ currentTime }}</view>
+  <wxs src="../../../utils/util.wxs" module="util" />
+  <view class="progress-currentTime">{{ util.formatSec(currentTime) }}</view>
   <view class="progress-line" bindtouchend="touchEnd" bindtouchmove="touchMove">
     <view class="line1"></view>
-    <view class="line2" style="width : {{ progress }}"></view>
-    <view class="circle" style="left: {{  progress }}"></view>
+    <view class="line2" style="width: {{ progress }}"></view>
+    <view class="circle" style="left: {{ progress }}"></view>
   </view>
-  <view class="progress-duration">{{ duration }}</view>
+  <view class="progress-duration">{{ util.formatSec(duration) }}</view>
 </view>

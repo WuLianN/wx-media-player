@@ -14,7 +14,10 @@ Component({
 
   storeBindings: {
     store,
-    fields: ['id', 'nextIdIndex', 'allSongId', 'songList']
+    fields: ['id', 'allSongId', 'songList', 'globalPlayerStatus'],
+    actions: {
+      setPlayerStatus: 'setPlayerStatus'
+    }
   },
 
   /**
@@ -27,6 +30,7 @@ Component({
     isShowMask: false,
     isShowPlayer: false,
     _songList: null,
+    status: '',
     songData: ''
   },
 
@@ -49,13 +53,15 @@ Component({
         // 播放
         app.globalData.audio.play()
         this.setData({
-          playerStatus: playImg
+          playerStatus: playImg,
+          status: 'play'
         })
       } else {
         // 暂停
         app.globalData.audio.pause()
         this.setData({
-          playerStatus: pauseImg
+          playerStatus: pauseImg,
+          status: 'pause'
         })
       }
     },
@@ -127,12 +133,25 @@ Component({
         // 获取url
         const timestamp = +new Date()
         this.getUrl(id, timestamp).then(res => {
+          console.log(res.data.data[0])
           const url = res.data.data[0].url
           // 播放音乐
           const audio = app.globalData.audio
           audio.src = url
 
           this.isOtherSongList(id)
+        })
+      }
+    },
+
+    'globalPlayerStatus': function(status){
+      if (status === 'play'){
+         this.setData({
+           playerStatus: '/assets/player/play-gray.png'
+         })
+      } else if (status === 'pause'){
+        this.setData({
+          playerStatus: '/assets/player/pause-gray.png'
         })
       }
     }

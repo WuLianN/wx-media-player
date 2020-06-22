@@ -1,6 +1,6 @@
 <view class="player">
   <!-- 头像 -->
-  <view bindtap="songDetail" class="player-detail">
+  <view bindtap="showPlayer" class="player-detail">
     <view class="song-pic">
       <image src="{{ songData.picUrl || picUrl }}" alt class="song-img"></image>
     </view>
@@ -21,7 +21,7 @@
     <image src="{{ musicList }}" bindtap="musicList" class="song-player-img"></image>
   </view>
 
-  <custom-player style="display: {{isShowPlayer === true ? 'block' : 'none'}}" bindunshowPlayer="unshowPlayer" songData="{{songData}}" />
+  <custom-player style="display: {{isShowPlayer === true ? 'block' : 'none'}}" bindunshowPlayer="unshowPlayer" songData="{{songData}}" status="{{ status }}" />
 
-  <custom-musicList songList="{{ _songList }} " bindcloseMaskEvent="closeMask " style="display: {{ isShowMask===true ? 'block' : 'none' }} " />
+  <custom-musicList songList="{{ _songList }}" bindcloseMaskEvent="closeMask" style="display: {{ isShowMask===true ? 'block' : 'none' }} " />
 </view>

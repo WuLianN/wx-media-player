@@ -1,16 +1,17 @@
 .player-tray {
   position: relative;
   width: 100vw;
-  height: 80vh;
+  height: 70vh;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
+  /* background: red; */
 }
 
 .player-record {
   width: 77vw;
   height: 72vw;
-  margin: 10vw;
+  margin: 15vw;
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
@@ -26,7 +27,7 @@
   height: 41vw;
   border-radius: 50%;
   position: absolute;
-  top: 24vw;
+  top: 29vw;
   z-index: 100;
 }
 

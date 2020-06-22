@@ -28,10 +28,10 @@
 
   <view class="player-footer">
     <!-- 进度条 -->
-    <custom-progress />
+    <custom-progress duration="{{ duration }}" currentTime="{{ currentTime }}" />
 
     <!-- 控制 -->
-    <custom-controls />
+    <custom-controls status="{{ status }}" />
   </view>
 
   <!-- 高斯模糊背景图片 -->

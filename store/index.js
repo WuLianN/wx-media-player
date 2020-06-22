@@ -11,7 +11,8 @@ export const store = observable({
   songData: null, // 歌曲信息
   url: '', // 歌曲url
   id: 0, // 歌曲id
-  nextIdIndex: 0,
+  globalPlayerStatus: '',
+  isRandomMode: false,
 
   // 显示 songListDetail
   isShowSongListDetail: action(function(value) {
@@ -47,16 +48,24 @@ export const store = observable({
   setId: action(function(value) {
     this.id = value
   }),
-  
-  // 下一个ID的索引
-  setNextIdIndex: action(function(value){
-    this.nextIdIndex = value
+
+  setGlobalPlayerStatus: action(function(value) {
+    this.globalPlayerStatus = value
+  }),
+
+  setIsRandomMode: action(function(value){
+    this.isRandomMode = value
   }),
 
   /** audio 播放器 */
-  puase: false,
+  duration: 0,
+  currentTime: 0,
 
-  setPause: action(function(value) {
-    this.pause = value
+  setDuration: action(function(value) {
+    this.duration = value
+  }),
+
+  setCurrentTime: action(function(value) {
+    this.currentTime = value
   })
 })

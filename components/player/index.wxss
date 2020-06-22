@@ -54,13 +54,17 @@
 }
 
 
+.player-content {
+  width: 100vw;
+  height: 70vh;
+  overflow: auto;
+  position: relative;
+}
 
-
-
-
-
-
-
+.player-footer {
+  width: 100vw;
+  height: 20vh;
+}
 
 .player-bg {
   width: 100vw;

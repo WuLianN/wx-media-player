@@ -1,1 +1,39 @@
-/* components/player/controls/index.wxss */
+.controls {
+  width: 90vw;
+  height: 10vh;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.controls-playStyle {
+  width: 12vw;
+  height: 8vh;
+}
+
+.controls-pre {
+  width: 12vw;
+  height: 8vh;
+}
+
+.controls-switch {
+  width: 18vw;
+  height: 12vh;
+}
+
+.controls-next {
+  width: 12vw;
+  height: 8vh;
+}
+
+.controls-musicList {
+  width: 12vw;
+  height: 8vh;
+}
+
+.controls-img {
+  width: 100%;
+  height: 100%;
+}

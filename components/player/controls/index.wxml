@@ -1,12 +1,12 @@
 <view class="controls">
   <view class="controls-playStyle">
-    <image src="/assets/player/loop.png" bindtap="playStyle" class="controls-img"></image>
+    <image src="{{ playStyleImg }}" bindtap="playStyle" class="controls-img"></image>
   </view>
   <view class="controls-pre" bindtap="preSong">
     <image src="/assets/player/previous.png" alt class="controls-img"></image>
   </view>
   <view class="controls-switch" bindtap="playOrPause">
-    <image src="/assets/player/play-white.png" alt class="controls-img"></image>
+    <image src="{{playerStatus}}" alt class="controls-img"></image>
   </view>
   <view class="controls-next" bindtap="nextSong">
     <image src="/assets/player/nextsong.png" alt class="controls-img"></image>
@@ -15,3 +15,5 @@
     <image src="/assets/player/musiclist.png" alt class="controls-img"></image>
   </view>
 </view>
+
+<custom-musicList bindcloseMaskEvent="closeMask" style="display: {{ isShowMask=== true ? 'block' : 'none' }} " songList="{{songList}}" />

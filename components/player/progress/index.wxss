@@ -1,1 +1,54 @@
-/* components/player/progress/index.wxss */
+.progress {
+  /* border: 1px solid red; */
+  width: 100vw;
+  height: 6vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
+}
+
+.progress-currentTime {
+  font-size: 24rpx;
+  color: #9b9b9b;
+  position: relative;
+  left: 5vw;
+}
+
+.progress-line {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  width: 65vw;
+  height: 4vh;
+  position: relative;
+}
+
+.line1 {
+  width: 65vw;
+  height: 1px;
+  background: rgb(184, 179, 179);
+}
+
+.line2 {
+  height: 1px;
+  background: white;
+  position: absolute;
+  left: 0;
+}
+
+.circle {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  left: 0;
+}
+
+.progress-duration {
+  font-size: 24rpx;
+  color: #9b9b9b;
+  position: relative;
+  left: -5vw;
+}

@@ -1,10 +1,23 @@
-// components/player/index.js
+import {
+  storeBindingsBehavior
+} from 'mobx-miniprogram-bindings'
+import {
+  store
+} from '../../store/index.js'
+
 Component({
+  behaviors: [storeBindingsBehavior],
+
+  storeBindings: {
+    store,
+    fields: ['duration', 'currentTime', 'playerStatus', 'songList'],
+  },
   /**
    * 组件的属性列表
    */
   properties: {
-    songData: Object
+    songData: Object,
+    status: String
   },
 
   /**
@@ -12,6 +25,7 @@ Component({
    */
   data: {
     isPlayerOrlyrics: true,
+    isShowMask: false
   },
 
   /**
