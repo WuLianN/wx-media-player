@@ -16,7 +16,8 @@ Component({
       setUrl: 'setUrl',
       setId: 'setId',
       setDuration: 'setDuration',
-      setCurrentTime: 'setCurrentTime'
+      setCurrentTime: 'setCurrentTime',
+      setIsRotate: 'setIsRotate'
     }
   },
   /**
@@ -66,12 +67,21 @@ Component({
 
       // 播放
       audio.onPlay(function() {
-
+         // 1秒后 转动转盘
+        setTimeout(() => {
+          _this.setIsRotate(true)
+        }, 300)
       })
 
       // 暂停
       audio.onPause(function() {
+         // 暂停转动转盘
+        _this.setIsRotate(false)
+      })
 
+      // 跳转
+      audio.onSeeked(function(){
+         
       })
 
       // 错误

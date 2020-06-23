@@ -14,7 +14,7 @@
 
   <view bindtap="exchange" class="player-content">
     <!-- 音乐转盘 -->
-    <custom-tray style="display: {{ isPlayerOrlyrics === true ? 'block' : 'none'}}" songData="{{songData}}" />
+    <custom-tray style="display: {{ isPlayerOrlyrics === true ? 'block' : 'none'}}" songData="{{songData}}" isRotate="{{ isRotate }}" isResetRotateAngle="{{ isResetRotateAngle }}" />
 
     <!-- 歌词 -->
     <!-- <view class="player-lyric" ref="scrollWrap">

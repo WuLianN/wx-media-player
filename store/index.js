@@ -12,7 +12,9 @@ export const store = observable({
   url: '', // 歌曲url
   id: 0, // 歌曲id
   globalPlayerStatus: '',
-  isRandomMode: false,
+  isRandomMode: false, // 随机模式
+  isRotate: false, // 音乐转盘
+  isResetRotateAngle: false,
 
   // 显示 songListDetail
   isShowSongListDetail: action(function(value) {
@@ -53,8 +55,18 @@ export const store = observable({
     this.globalPlayerStatus = value
   }),
 
-  setIsRandomMode: action(function(value){
+  // 随机模式
+  setIsRandomMode: action(function(value) {
     this.isRandomMode = value
+  }),
+
+  // 音乐转盘
+  setIsRotate: action(function(value) {
+    this.isRotate = value
+  }),
+
+  setIsResetRotateAngle: action(function(value) {
+    this.isResetRotateAngle = value
   }),
 
   /** audio 播放器 */

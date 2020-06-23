@@ -15,6 +15,37 @@
    }
  }
 
+ function snippetNum(value) {
+   if (!value) {
+     return ''
+   } else {
+     if (value > 99999 && value <= 99999999) {
+       var result = Math.floor(value / 10000)
+       return result + '万'
+     } else if (value > 99999999) {
+       var result = (value / 100000000)
+       var Tresult = result.toString().slice(0, 3)
+       return Tresult + '亿'
+     } else {
+       return value
+     }
+   }
+ }
+
+function snippet15(value) {
+  if (!value) {
+    return ''
+  } else {
+    if (value.length > 10) {
+      return value.slice(0, 14) + '...'
+    } else {
+      return value.slice(0, 14)
+    }
+  }
+}
+
  module.exports = {
-   formatSec: formatSec
+   formatSec: formatSec,
+   snippetNum: snippetNum,
+   snippet15: snippet15
  }

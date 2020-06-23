@@ -74,10 +74,15 @@ Component({
             ((TtouchEnd - otherLength) / TlineLength) * Tduration
           )
 
-          console.log(currentTime/1000)
-
           const audio = app.globalData.audio
-          audio.currentTime = currentTime / 1000
+
+          audio.stop()
+
+          audio.seek(currentTime)
+        
+          setTimeout(() => {
+            audio.play()
+          }, 50)
 
           _this.setData({
             progress: leftLength,

@@ -1,7 +1,9 @@
 <view class="player-tray">
-  <view class="player-record" style="transform: {{ rotate }}">
-    <image class="player-record-bg" src="/assets/player/recordx.png"></image>
-    <image  class="player-img" src="{{songData.picUrl}}"></image>
+  <view class="player-record" >
+    <view class="player-record-rotate" style="transform: {{ rotate }}">
+      <image class="player-record-bg" src="/assets/player/recordx.png"></image>
+      <image class="player-img" src="{{songData.picUrl}}"></image>
+    </view>
   </view>
 
   <view class="user-function">

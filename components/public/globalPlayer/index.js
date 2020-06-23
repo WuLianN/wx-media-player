@@ -16,7 +16,8 @@ Component({
     store,
     fields: ['id', 'allSongId', 'songList', 'globalPlayerStatus'],
     actions: {
-      setPlayerStatus: 'setPlayerStatus'
+      setPlayerStatus: 'setPlayerStatus',
+      setIsResetRotateAngle: 'setIsResetRotateAngle'
     }
   },
 
@@ -140,6 +141,9 @@ Component({
           audio.src = url
 
           this.isOtherSongList(id)
+
+          // rotateAngle -> 0
+          this.setIsResetRotateAngle(true)
         })
       }
     },

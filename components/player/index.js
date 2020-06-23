@@ -10,7 +10,7 @@ Component({
 
   storeBindings: {
     store,
-    fields: ['duration', 'currentTime', 'playerStatus', 'songList'],
+    fields: ['duration', 'currentTime', 'songList', 'isRotate', 'isResetRotateAngle'],
   },
   /**
    * 组件的属性列表

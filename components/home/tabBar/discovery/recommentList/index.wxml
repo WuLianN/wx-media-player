@@ -1,3 +1,5 @@
+<wxs src="../../../../../utils/util.wxs" module="util" />
+
 <view class="recommentList">
   <view class="recommentList-header">
     <view class="recommentList-header-firstTitle">推荐歌单</view>
@@ -12,10 +14,10 @@
       <image class="recommentList-show-img" src="{{item.picUrl}}"></image>
       <view class="recommentList-show-count-wrap">
         <image class="recommentList-show-count-img" src="/assets/discovery/play-icon.png"></image>
-        <view class="recommentList-show-count">{{ item.playCount }}</view>
+        <view class="recommentList-show-count">{{ util.snippetNum(item.playCount) }}</view>
       </view>
 
-      <view class="recommentList-show-title">{{ item.name}}</view>
+      <view class="recommentList-show-title">{{ util.snippet15(item.name) }}</view>
     </view>
   </view>
 </view>

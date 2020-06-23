@@ -3,7 +3,6 @@
   "usingComponents": {
     "tabBar": "/components/home/tabBar/index",
     "globalPlayer": "/components/public/globalPlayer/index",
-    "player": "/components/player/index",
     "songListDetail": "/components/public/songListDetail/index"
   }
 }
