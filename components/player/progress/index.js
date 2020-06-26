@@ -1,5 +1,20 @@
 const app = new getApp()
+import {
+  storeBindingsBehavior
+} from 'mobx-miniprogram-bindings'
+import {
+  store
+} from '../../../store/index.js'
+
 Component({
+  behaviors: [storeBindingsBehavior],
+
+  storeBindings: {
+    store,
+    actions: {
+      setIsProgressControl: 'setIsProgressControl'
+    }
+  },
   /**
    * 组件的属性列表
    */
@@ -84,8 +99,10 @@ Component({
             audio.play()
           }, 50)
 
+          _this.setIsProgressControl(true)
+
           _this.setData({
-            progress: leftLength,
+            progress: leftLength
           })
         })
         .exec()

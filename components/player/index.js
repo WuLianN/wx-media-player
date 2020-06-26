@@ -10,14 +10,15 @@ Component({
 
   storeBindings: {
     store,
-    fields: ['duration', 'currentTime', 'songList', 'isRotate', 'isResetRotateAngle'],
+    fields: ['duration', 'currentTime', 'songList', 'isRotate', 'isResetRotateAngle', 'isProgressControl'],
   },
   /**
    * 组件的属性列表
    */
   properties: {
     songData: Object,
-    status: String
+    status: String,
+    lyric: Array
   },
 
   /**
@@ -34,6 +35,20 @@ Component({
   methods: {
     onClickLeft() {
       this.triggerEvent('unshowPlayer')
+    },
+
+    exchange() {
+      // 获得isShowMusicList的状态
+      if (this.data.isPlayerOrlyrics) {
+        this.setData({
+          isPlayerOrlyrics: false
+        })
+      } else {
+        this.setData({
+          isPlayerOrlyrics: true
+        })
+      }
+      console.log(this.properties.lyric)
     }
   }
 })

@@ -15,6 +15,19 @@
    }
  }
 
+ function reverseFormatSec(formatSec) {
+   var h = parseInt(formatSec[0], 10)
+   var m = parseInt(formatSec[1], 10)
+   var s = parseInt(formatSec[3], 10) * 10 + parseInt(formatSec[4], 10)
+
+   return h * 3600 + m * 60 + s
+ }
+
+ function floor(num){
+   return Math.floor(num)
+ }
+
+
  function snippetNum(value) {
    if (!value) {
      return ''
@@ -32,20 +45,22 @@
    }
  }
 
-function snippet15(value) {
-  if (!value) {
-    return ''
-  } else {
-    if (value.length > 10) {
-      return value.slice(0, 14) + '...'
-    } else {
-      return value.slice(0, 14)
-    }
-  }
-}
+ function snippet15(value) {
+   if (!value) {
+     return ''
+   } else {
+     if (value.length > 10) {
+       return value.slice(0, 14) + '...'
+     } else {
+       return value.slice(0, 14)
+     }
+   }
+ }
 
  module.exports = {
    formatSec: formatSec,
    snippetNum: snippetNum,
-   snippet15: snippet15
+   snippet15: snippet15,
+   reverseFormatSec: reverseFormatSec,
+   floor: floor
  }

@@ -32,7 +32,8 @@ Component({
     isShowPlayer: false,
     _songList: null,
     status: '',
-    songData: ''
+    songData: '',
+    lyric: []
   },
 
   /**
@@ -94,7 +95,7 @@ Component({
       })
     },
 
-    unshowPlayer(){
+    unshowPlayer() {
       this.setData({
         isShowPlayer: false
       })
@@ -125,6 +126,28 @@ Component({
           _songList: this.data.songList
         })
       }
+    },
+
+    getLyric(id) {
+      api.getLrc(id).then(res => {
+        const result = res.data.lrc.lyric
+        const resultSplit = result.split('\n')
+        let lyrics = []
+        resultSplit.forEach(ele => {
+          const res = ele.split(']')
+          const time = res[0].slice(1, 6)
+          const lyric = res[1]
+         
+          lyrics.push({
+            time: time,
+            lyric: lyric
+          })
+        })
+
+        this.setData({
+          lyric: lyrics
+        })
+      })
     }
   },
 
@@ -134,11 +157,13 @@ Component({
         // 获取url
         const timestamp = +new Date()
         this.getUrl(id, timestamp).then(res => {
-          console.log(res.data.data[0])
           const url = res.data.data[0].url
           // 播放音乐
           const audio = app.globalData.audio
           audio.src = url
+
+          // 获取歌词
+          this.getLyric(id)
 
           this.isOtherSongList(id)
 
@@ -148,12 +173,12 @@ Component({
       }
     },
 
-    'globalPlayerStatus': function(status){
-      if (status === 'play'){
-         this.setData({
-           playerStatus: '/assets/player/play-gray.png'
-         })
-      } else if (status === 'pause'){
+    'globalPlayerStatus': function(status) {
+      if (status === 'play') {
+        this.setData({
+          playerStatus: '/assets/player/play-gray.png'
+        })
+      } else if (status === 'pause') {
         this.setData({
           playerStatus: '/assets/player/pause-gray.png'
         })

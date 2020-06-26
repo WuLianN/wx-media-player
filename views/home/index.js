@@ -62,7 +62,8 @@ Component({
 
         // 获取当前进度 -> 存储currentTime
         const currentTime = audio.currentTime
-        _this.setCurrentTime(currentTime)
+        const formatCurrentTime = Math.floor(currentTime)
+        _this.setCurrentTime(formatCurrentTime)
       })
 
       // 播放

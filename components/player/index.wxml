@@ -17,11 +17,7 @@
     <custom-tray style="display: {{ isPlayerOrlyrics === true ? 'block' : 'none'}}" songData="{{songData}}" isRotate="{{ isRotate }}" isResetRotateAngle="{{ isResetRotateAngle }}" />
 
     <!-- 歌词 -->
-    <!-- <view class="player-lyric" ref="scrollWrap">
-      <view v-show="!isPlayerOrlyrics" class="player-lyrics-wrap" ref="scroll">
-        <p v-for="(item, index) in lyric[0]" :key="index" :time="item.time" ref="p" class="player-lyrics" :class="{ active: isActive === index}">{{ item.lyrics }}</p>
-      </view>
-    </view> -->
+    <custom-lyric style="display: {{ isPlayerOrlyrics === false ? 'block' : 'none'}}" lyric="{{lyric}}" currentTime="{{ currentTime }}" duration="{{ duration }}" isProgressControl="{{isProgressControl}}" />
   </view>
 
   <!-- 底部 -->

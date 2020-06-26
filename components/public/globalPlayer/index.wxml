@@ -21,7 +21,7 @@
     <image src="{{ musicList }}" bindtap="musicList" class="song-player-img"></image>
   </view>
 
-  <custom-player style="display: {{isShowPlayer === true ? 'block' : 'none'}}" bindunshowPlayer="unshowPlayer" songData="{{songData}}" status="{{ status }}" />
+  <custom-player style="display: {{isShowPlayer === true ? 'block' : 'none'}}" bindunshowPlayer="unshowPlayer" songData="{{songData}}" status="{{ status }}" lyric="{{lyric}}" />
 
   <custom-musicList songList="{{ _songList }}" bindcloseMaskEvent="closeMask" style="display: {{ isShowMask===true ? 'block' : 'none' }} " />
 </view>

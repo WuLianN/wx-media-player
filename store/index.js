@@ -15,6 +15,7 @@ export const store = observable({
   isRandomMode: false, // 随机模式
   isRotate: false, // 音乐转盘
   isResetRotateAngle: false,
+  isProgressControl: false,
 
   // 显示 songListDetail
   isShowSongListDetail: action(function(value) {
@@ -67,6 +68,10 @@ export const store = observable({
 
   setIsResetRotateAngle: action(function(value) {
     this.isResetRotateAngle = value
+  }),
+
+  setIsProgressControl: action(function(value){
+    this.isProgressControl = value
   }),
 
   /** audio 播放器 */

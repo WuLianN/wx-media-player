@@ -1,2 +1,16 @@
-<!--components/player/lyric/index.wxml-->
-<text>components/player/lyric/index.wxml</text>
+<wxs src="../../../utils/util.wxs" module="util" />
+<view class="lyric" wx:if="{{lyric != false}}">
+  <scroll-view class="infinite-list-container" bindscroll="scrollEvent" scroll-y scroll-top="{{scrollTop}}" scroll-with-animation>
+    <view class="infinite-list-phantom" style="height:{{ listHeight + 'px' }}"></view>
+
+    <view class="infinite-list">
+      <view class="infinite-list-item" wx:for="{{ lyric }}" wx:key="index" style=" height: {{ itemSize + 'rpx'}}; color: {{ util.floor(currentTime) >= util.reverseFormatSec(item.time) &&  util.floor(currentTime) < util.reverseFormatSec(lyric[index+1].time)  ? 'white': '' }}">
+        {{ item.lyric }}
+      </view>
+    </view>
+  </scroll-view>
+
+  <view class="custom-play">
+    <view>{{ lyric[middle].time }}</view>
+  </view>
+</view>
