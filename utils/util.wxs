@@ -23,7 +23,7 @@
    return h * 3600 + m * 60 + s
  }
 
- function floor(num){
+ function floor(num) {
    return Math.floor(num)
  }
 
@@ -57,10 +57,23 @@
    }
  }
 
+ function snippet17(value) {
+   if (!value) {
+     return ''
+   } else {
+     if (value.length > 10) {
+       return value.slice(0, 16) + '...'
+     } else {
+       return value.slice(0, 16)
+     }
+   }
+ }
+
  module.exports = {
    formatSec: formatSec,
    snippetNum: snippetNum,
    snippet15: snippet15,
+   snippet17: snippet17,
    reverseFormatSec: reverseFormatSec,
    floor: floor
  }

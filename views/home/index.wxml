@@ -5,5 +5,5 @@
 
   <globalPlayer />
 
-  <songListDetail songListDetail="{{songListDetail}}" style="display: {{isShow ? 'block' : 'none'}}" />
+  <!-- <songListDetail songListDetail="{{songListDetail}}" style="display: {{isShow ? 'block' : 'none'}}" /> -->
 </view>

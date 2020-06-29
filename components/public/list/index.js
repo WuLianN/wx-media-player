@@ -22,7 +22,11 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    songList: Array
+    songList: Array,
+    needScrollTop: {
+      type: Boolean,
+      value: false
+    }
   },
 
   /**
@@ -59,6 +63,15 @@ Component({
         const url = res.data.data[0].url
         this.setUrl(url)
       })
+    },
+
+
+    scroll(e) {
+      if (this.properties.needScrollTop){
+        const scrollTop = e.detail.scrollTop
+        // 触发
+        this.triggerEvent('uploadScrollTop', { scrollTop: scrollTop })
+      }
     }
   }
 })

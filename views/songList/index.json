@@ -1,4 +1,6 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "custom-songListCat": "/components/home/tabBar/discovery/songList/songListCat/index"
+  }
 }

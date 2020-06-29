@@ -1,1 +1,14 @@
-<text>songList</text>
+<view class="songList">
+  <view class="tab">
+    <van-tabs active="{{ active }}" swipeable title-active-color="red" bindtab="onClick">
+      <!-- <van-tab title="{{ specialCat }}">
+        <Recomment />
+      </van-tab> -->
+
+      <van-tab wx:for="{{ category }}" title="{{ item }}" name="{{item}}">
+        <custom-songListCat category="{{ item }}" />
+      </van-tab>
+
+    </van-tabs>
+  </view>
+</view>

@@ -61,8 +61,6 @@ Component({
           })
         })
 
-        console.log(result)
-
         this.setData({
           songListData: result.slice(0, 6)
         })

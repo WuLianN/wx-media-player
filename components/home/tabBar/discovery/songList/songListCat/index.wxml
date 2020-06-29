@@ -1,0 +1,21 @@
+<wxs src="../../../../../../utils/util.wxs" module="util" />
+<view class="main-individuality-wrap">
+  <view class="main-individuality">
+    <view class="main-individuality-info" bindtap="getSongListData" data-songListData="{{purifyResult[index]}}" wx:for="{{purifyResult}}" wx:key="index">
+      <image class="main-individuality-img" src="{{item.coverImgUrl}}" alt></image>
+      <view class="main-individuality-count-wrap">
+        <image class="main-individuality-count-img" src="/assets/discovery/play-icon.png" alt></image>
+        <view class="main-individuality-count">{{ util.snippetNum(item.playCount) }}</view>
+      </view>
+      <view class="main-individuality-title">{{ util.snippet15(item.name) }}</view>
+    </view>
+  </view>
+
+  <!-- <van-loading
+      type="spinner"
+      color="#1989fa"
+      size="24px"
+      class="loading"
+      v-if="isLoadingMore"
+    >努力加载中..</van-loading> -->
+</view>

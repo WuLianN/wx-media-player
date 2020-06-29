@@ -1,19 +1,20 @@
+<wxs src="../../utils/util.wxs" module="util" />
 <view class="songListDetail">
-  <Header leftTitle="{{leftTitle}}" />
+  <!-- <Header leftTitle="{{leftTitle}}" /> -->
 
   <!-- <van-notice-bar class="mask" wx:if="isShowMask" background="transparent">{{ songlistData.name }}</van-notice-bar> -->
 
 
   <view class="main">
-    <image class="main-info-image" src="{{songListDetail.picUrl}}"></image>
-    <view class="main-info-count">{{ songListDetail.playCount }}</view>
+    <image class="main-info-image" src="{{songListDetail.coverImgUrl || songListDetail.picUrl}}"></image>
+    <view class="main-info-count">{{ util.snippetNum(songListDetail.playCount) }}</view>
     <view class="main-info-content">
-      <view class="main-info-title">{{ songListDetail.name }}</view>
+      <view class="main-info-title">{{ util.snippet17(songListDetail.name) }}</view>
       <view class="main-info-creator">
         <image class="main-info-creator-image" src="{{songListDetail.avatarUrl}}" wx:if="{{songListDetail.avatarUrl}}"></image>
         <view>{{ songListDetail.nickname }}</view>
       </view>
-      <view class="main-info-des">{{ songListDetail.description }}</view>
+      <view class="main-info-des">{{ songListDetail.copywriter|| util.snippet17(songListDetail.description) }}</view>
     </view>
   </view>
 
@@ -39,7 +40,7 @@
     </view>
   </view>
 
-  <view class=" footer {{ isActive === true ? 'active' : '' }}" bindtouchstart="getStart" bindtouchend="getEnd" bindtouchmove="touchMove">
+  <view class=" footer {{ isActive === true ? 'active' : '' }}">
     <view class="footer-header">
       <view class="toCircle-left"></view>
       <view class="footer-header-image-wrap">
@@ -53,11 +54,9 @@
     </view>
 
     <view class="footer-list">
-      <custom-list wx:if="{{_songList}}" songList="{{_songList}}" />
+      <custom-list needScrollTop="{{true}}" wx:if="{{songList}}" songList="{{songList}}" binduploadScrollTop="uploadScrollTop" />
     </view>
   </view>
 
-  <!-- <globalPlayer /> -->
-
-  <image class="songListDetail-bg" src="{{songListDetail.picUrl}}"></image>
+  <image class="songListDetail-bg" src="{{songListDetail.coverImgUrl || songListDetail.picUrl}}"></image>
 </view>

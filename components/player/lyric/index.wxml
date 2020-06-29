@@ -11,6 +11,6 @@
   </scroll-view>
 
   <view class="custom-play">
-    <view>{{ lyric[middle].time }}</view>
+    <!-- <view>{{ lyric[middle].time }}</view> -->
   </view>
 </view>

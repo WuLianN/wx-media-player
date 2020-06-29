@@ -1,1 +1,10 @@
-/* views/songList/index.wxss */
+.songList {
+  width: 100vw;
+  height: 100vh;
+}
+
+.tab {
+  width: 100vw;
+  height: 7vh;
+  font-size: 3vh;
+}

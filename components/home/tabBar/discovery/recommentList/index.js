@@ -1,21 +1,9 @@
-import {
-  storeBindingsBehavior
-} from 'mobx-miniprogram-bindings'
-import {
-  store
-} from '../../../../../store/index.js'
+
+
+const myBehavior = require('../../../../../behaviors/index.js')
 
 Component({
-  behaviors: [storeBindingsBehavior],
-
-  storeBindings: {
-    store,
-    field: ['songListData'],
-    actions: {
-      isShowSongListDetail: 'isShowSongListDetail',
-      setSongListData: 'setSongListData'
-    }
-  },
+  behaviors: [myBehavior],
   /**
    * 组件的属性列表
    */
@@ -34,16 +22,6 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    getSongListData(event){
-      const data = event.currentTarget.dataset.songlistdata
-      this.isShowSongListDetail(true)
-      this.setSongListData(data)
-    }
-  },
 
-  lifetimes: {
-    attached: function() {
-
-    }
   }
 })

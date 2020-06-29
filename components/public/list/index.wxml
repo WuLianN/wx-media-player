@@ -1,4 +1,4 @@
-  <view class="list">
+<!-- <view class="list">
     <view wx:for="{{songList}}" bindtap="play" data-songData="{{item}}"  class="result">
       <view class="result-index">{{ index + 1 }}</view>
       <view class="info">
@@ -6,4 +6,14 @@
         <view class="songArtist">{{ item.artist }}</view>
       </view>
     </view>
+  </view> -->
+
+<scroll-view class="list" scroll-y bindscroll="scroll">
+  <view wx:for="{{songList}}" bindtap="play" data-songData="{{item}}" class="result">
+    <view class="result-index">{{ index + 1 }}</view>
+    <view class="info">
+      <view class="songName">{{ item.songName }}</view>
+      <view class="songArtist">{{ item.artist }}</view>
+    </view>
   </view>
+</scroll-view>

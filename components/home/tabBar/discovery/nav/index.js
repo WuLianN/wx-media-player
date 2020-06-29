@@ -43,7 +43,7 @@ Component({
       wx.navigateTo({
         url: '/views/songList/index',
       })
-      this.setNavBarTitle('歌单')
+      this.setNavBarTitle('歌单广场')
     },
 
     setNavBarTitle(title){
