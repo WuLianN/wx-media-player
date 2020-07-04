@@ -11,7 +11,6 @@
 ## display :video_camera:
 
 ![](https://github.com/WuLianN/wx-media-player/blob/master/assets/display/discover.png)
-
 ![](https://github.com/WuLianN/wx-media-player/blob/master/assets/display/player.png)
 
 
